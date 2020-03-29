@@ -16,43 +16,63 @@ Install PHP and requirements
 Install MySQL
 Setting Permissions
 Enabling Modules
+
+
 STEP 1: Creating file for the script
+
 sudo gedit lamp.sh
+
 In the above command gedit is used to create file. Filename should be of format <filename.sh> .
 
 STEP 2: Updating Apt Packages and upgrading latest patches
+
 sudo apt-get update -y && sudo apt-get upgrade -y
+
 By running the above command it will update and upgrade the apt-get packages to their current versions in your system. It might take some time for the execution of this code.
 
 NOTE: Use the below command if the code shows error while execution.
 
 ps aux | grep -i apt
+
 STEP 3: Installing Apache2 Web server
+
 sudo apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert -y
+
 The above command is used for installing the Apache web server on the linux which is acting as the base layer in LAMP stack.
 
 STEP 4: Installing MySQL
+
 sudo apt-get install mysql-server mysql-client -y
+
 The above command is used for installing MYSQL. It is used for collecting and storing the data as RDBMS.
 
 STEP 5: Installing PHP & Requirements
+
 sudo apt-get install libapache2-mod-php7.0 php7.0 php7.0-common php7.0-curl php7.0-dev php7.0-gd php-pear php7.0-mcrypt php7.0-mysql -y
+
 The above command is used for installing PHP and requirements. PHP an object oriented scripting language is used to display the data in MySQL.
 
 STEP 6: Setting Permissions
-sudo chown -R www-data:www-data /var/www
-In the above command
 
-the chown command changes the ownership to user:group i.e. www-data:www-data in our case.
+sudo chown -R www-data:www-data /var/www
+
+In the above command the chown command changes the ownership to user:group i.e. www-data:www-data in our case.
 -R is used to change the ownership recursively for all files and directories in /var/www.
+
 STEP 7: Enabling Modules
+
 sudo a2enmod rewrite
+
 sudo phpenmod mcrypt
+
 In the above command a2enmod enables apache2 module and phpenmod enables php module.
 
 STEP 8: Restarting Apache
+
 sudo service apache2 restart
+
 The above command is used to restart the apache2 web service.
 
 Conclusion:
+
 Now the LAMP installation is completed. LAMP is so extensively and often used to update or host the existing applications, that’s why making it quicker and simple becomes more proficient.
